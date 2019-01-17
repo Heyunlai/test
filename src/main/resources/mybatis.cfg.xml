@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+       <configuration>
+          <environments default="development">
+            <environment id="development">
+               <transactionManager type="JDBC" />
+                 <!-- 配置数据库连接信息 -->
+                 <dataSource type="UNPOOLED">
+                    <property name="driver" value="com.mysql.jdbc.Driver" />
+                     <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=false" />
+                   <property name="username" value="root" />
+                    <property name="password" value="MYSQL" />
+               </dataSource>
+           </environment>
+        </environments>
+        <mappers>
+            <!--第一种 要写. 要写/-->
+            <mapper resource="self/he/mapper/GirlMapper.xml"/>
+            <!--第二种 可通过url-->
+            <!--<mapper url=""></mapper>-->
+            <!--第三种 可通过class，接口与mapper.xml要在同一包名下-->
+            <!--<mapper class=""></mapper>-->
+            <!--第四种： 引入一个包-->
+            <!--<mapper name=""/>-->
+        </mappers>
+     </configuration>
